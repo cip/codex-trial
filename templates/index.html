@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPEX Spot Preise Österreich</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js" integrity="sha256-ZHT5oXbi3Bt75/WtXu5I5gLDSvAXHnsh+H1W4Lx43rs=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Aktuelle EPEX Spot Preise für Österreich</h1>
+      <p>Die Daten werden direkt aus der aWATTar Schnittstelle geladen, welche die stündlichen EPEX Spot Day-Ahead Preise für Österreich bereitstellt.</p>
+    </header>
+
+    <main>
+      <section class="chart-section">
+        <canvas id="priceChart" aria-label="Stündliche EPEX Spot Preise" role="img"></canvas>
+        <div id="status" class="status"></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Datenquelle: <a href="https://www.awattar.de/services/api" target="_blank" rel="noopener">aWATTar API</a></small>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
